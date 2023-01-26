@@ -21,3 +21,5 @@ Acrescente um método na classe "Consulta" com a seguinte assinatura: "List<Data
 "void alteraConsultaPadrao(Predicate<RegistroDoTempo> consulta)"
 
 Crie também a classe "Data", um "DTO" simples que armazena dia, mes e ano.
+
+.
