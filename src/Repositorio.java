@@ -19,7 +19,7 @@ public class Repositorio implements RepositorioDAO {
         this.carregaDados();
     }
 
-    public void carregaDados(){
+    private void carregaDados(){
         String currDir = Paths.get("").toAbsolutePath().toString();
         // Monta o nome do arquivo
         String nomeCompleto = currDir+"/"+nArq;
