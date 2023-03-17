@@ -1,3 +1,5 @@
+import java.util.function.Predicate;
+
 public class App {
     public static void main(String[] args) {
         Consultas consultas = new Consultas(new Repositorio("poa_temps.txt"));
@@ -23,5 +25,21 @@ public class App {
                                         reg.getUmidadeRelativaDoAr() != -1);
         consultas.diasEmQue().forEach(System.out::println);
         System.out.println(consultas.diasEmQue().size());
+
+        System.out.println("\nDias em que... temperatura > 41");
+        consultas.alteraConsultaPadrao(new TempAcima41());
+        consultas.diasEmQue().forEach(System.out::println);
+        System.out.println(consultas.diasEmQue().size());        
+        
+        System.out.println("\nDias em que... umidade do ar < 40");
+        consultas.alteraConsultaPadrao(new Predicate<RegistroDoTempo>() {
+            public boolean test(RegistroDoTempo rt) {
+                return rt.getUmidadeRelativaDoAr() < 40;
+            }
+        });
+        consultas.diasEmQue().forEach(System.out::println);
+        System.out.println(consultas.diasEmQue().size());
+
+
     }
 }
