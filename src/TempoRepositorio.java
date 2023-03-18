@@ -9,11 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Repositorio implements RepositorioDAO {
+public class TempoRepositorio implements ITempoRepositorio {
     private List<RegistroDoTempo> registros;
     private String nArq;
 
-    public Repositorio(String fileName){
+    public TempoRepositorio(String fileName){
         registros = new LinkedList<>();
         this.nArq = fileName;
         this.carregaDados();

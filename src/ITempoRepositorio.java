@@ -1,5 +1,5 @@
 import java.util.List;
 
-public interface RepositorioDAO {
+public interface ITempoRepositorio {
     public List<RegistroDoTempo> getRegistros();   
 }

@@ -7,11 +7,11 @@ import java.util.stream.Collectors;
 
 public class Consultas {
 
-    private RepositorioDAO repo;
+    private ITempoRepositorio repo;
 
     private Predicate<RegistroDoTempo> filtroCorrente;
 
-    public Consultas(RepositorioDAO umRepo){
+    public Consultas(ITempoRepositorio umRepo){
        this.repo = umRepo;
        this.filtroCorrente = (RegistroDoTempo reg) -> false;
     }
